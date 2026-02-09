@@ -18,7 +18,11 @@ if (!isConnect('admin')) {
 <script>
     $('#bt_saveThermostat').on('click', function () {
         var number = $('#thermostat_number').val();
-        alert('Création de ' + number + ' thermostat(s)');
-        $('#md_modal').dialog('close');
+        if (number <= 0) {
+            alert('Saisissez au moins 1 thermostat');
+        } else {
+            alert('Création de ' + number + ' thermostat(s)');
+            $('#md_modal').dialog('close');
+        }
     });
 </script>
