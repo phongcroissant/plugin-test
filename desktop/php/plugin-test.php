@@ -19,7 +19,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 				<br>
 				<span>{{Ajouter}}</span>
 			</div>
-			<div class="cursor logoPrimary" id="btn_add_thermostat">
+			<div class="btn btn-success btn-sm" id="btn_add_thermostat">
 				<i class="fas fa-plus-circle"></i>
 				<br>
 				<span>{{Ajouter Thermostat}}</span>
