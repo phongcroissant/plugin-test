@@ -19,6 +19,11 @@ $eqLogics = eqLogic::byType($plugin->getId());
 				<br>
 				<span>{{Ajouter}}</span>
 			</div>
+			<div class="cursor eqLogicAction logoPrimary" data-action="add">
+				<i class="fas fa-plus-circle"></i>
+				<br>
+				<span>{{Ajouter Thermostat}}</span>
+			</div>
 			<div class="cursor eqLogicAction logoSecondary" data-action="gotoPluginConf">
 				<i class="fas fa-wrench"></i>
 				<br>
@@ -98,11 +103,6 @@ $eqLogics = eqLogic::byType($plugin->getId());
 										style="display:none;">
 									<input type="text" class="eqLogicAttr form-control" data-l1key="name"
 										placeholder="{{Nom de l'équipement}}">
-								</div>
-								<label class="col-sm-4 control-label">Adresse IP</label>
-								<div class="col-sm-6">
-									<input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="ip"
-										placeholder="test">
 								</div>
 							</div>
 							<div class="form-group">
