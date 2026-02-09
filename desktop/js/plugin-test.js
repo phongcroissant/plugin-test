@@ -32,7 +32,7 @@ $("#btn_add_thermostat").on("click", function () {
       height: "auto",
       modal: true,
     })
-    .load("index.php?v=d&plugin=monplugin&modal=addThermostat")
+    .load("index.php?v=d&plugin=plugin-test&modal=addThermostat")
     .dialog("open");
 });
 
