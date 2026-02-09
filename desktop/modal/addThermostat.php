@@ -1,38 +1,24 @@
 <?php
-require_once __DIR__ . '/../../../core/php/core.inc.php';
+if (!isConnect('admin')) {
+    throw new Exception('{{401 - Accès non autorisé}}');
+}
 ?>
 
-<div class="container-fluid">
-
+<div style="padding: 20px;">
     <div class="form-group">
-        <label>{{Nom du thermostat}}</label>
-        <input type="text" class="form-control" id="thermostat_name" placeholder="{{Ex : Salon}}">
+        <label>{{Nombre de thermostats à créer}}</label>
+        <input type="number" class="form-control" id="thermostat_number" placeholder="1" min="1" value="1" />
     </div>
 
-    <div class="form-group">
-        <label>{{Pièce}}</label>
-        <select class="form-control" id="thermostat_room">
-            <option value="">{{Sélectionner}}</option>
-                  <?php
-                  foreach (object::all() as $object) {
-                      echo '<option value="' . $object->getId() . '">'
-                          . $object->getName()
-                          . '</option>';
-                  }
-                  ?>
-        </select>
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-success" id="bt_saveThermostat">{{Valider}}</button>
     </div>
-
-    <hr>
-
-    <div class="text-right">
-        <button class="btn btn-default" onclick="$('#md_modal').dialog('close');">
-            {{Annuler}}
-        </button>
-
-        <button class="btn btn-success" id="btn_create_thermostat">
-            <i class="fas fa-check"></i> {{Créer}}
-        </button>
-    </div>
-
 </div>
+
+<script>
+    $('#bt_saveThermostat').on('click', function () {
+        var number = $('#thermostat_number').val();
+        alert('Création de ' + number + ' thermostat(s)');
+        $('#md_modal').dialog('close');
+    });
+</script>

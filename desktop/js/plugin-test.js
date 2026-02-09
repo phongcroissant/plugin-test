@@ -25,38 +25,10 @@ $("#table_cmd").sortable({
 });
 
 $("#btn_add_thermostat").on("click", function () {
+  $("#md_modal").dialog({ title: "{{Ajouter un thermostat}}" });
   $("#md_modal")
-    .dialog({
-      title: "{{Ajouter un thermostat}}",
-      width: 500,
-      height: "auto",
-      modal: true,
-    })
     .load("index.php?v=d&plugin=plugin-test&modal=addThermostat")
     .dialog("open");
-});
-
-// Bouton dans le popup
-$(document).on("click", "#btn_create_thermostat", function () {
-  let name = $("#thermostat_name").val();
-  let room = $("#thermostat_room").val();
-
-  if (name === "") {
-    jeedomUtils.showAlert({
-      message: "{{Le nom est obligatoire}}",
-      level: "danger",
-    });
-    return;
-  }
-
-  console.log("Création thermostat:", name, room);
-
-  // 👉 Ici plus tard :
-  // - appel AJAX
-  // - création eqLogic
-  // - etc.
-
-  $("#md_modal").dialog("close");
 });
 
 /* Fonction permettant l'affichage des commandes dans l'équipement */
