@@ -92,21 +92,12 @@ $eqLogics = eqLogic::byType($plugin->getId());
 						<div class="col-lg-6">
 							<legend><i class="fas fa-wrench"></i> {{Paramètres généraux}}</legend>
 							<div class="form-group">
-								<label class="col-sm-4 control-label">{{Nom de l'équipement}}</label>
+								<label class="col-sm-4 control-label">Nom de l'équipement test</label>
 								<div class="col-sm-6">
 									<input type="text" class="eqLogicAttr form-control" data-l1key="id"
 										style="display:none;">
 									<input type="text" class="eqLogicAttr form-control" data-l1key="name"
 										placeholder="{{Nom de l'équipement}}">
-									<select name="pets" id="pet-select">
-										<option value="">--Veuillez choisir une option--</option>
-										<option value="dog">Chien</option>
-										<option value="cat">Chat</option>
-										<option value="hamster">Hamster</option>
-										<option value="parrot">Perroquet</option>
-										<option value="spider">Araignée</option>
-										<option value="goldfish">Poisson rouge</option>
-									</select>
 								</div>
 							</div>
 							<div class="form-group">
