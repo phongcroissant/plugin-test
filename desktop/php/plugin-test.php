@@ -19,7 +19,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 				<br>
 				<span>{{Ajouter}}</span>
 			</div>
-			<div class="btn btn-success btn-sm" id="btn_add_thermostat">
+			<div class="cursor logoPrimary" id="btn_add_thermostat">
 				<i class="fas fa-plus-circle"></i>
 				<br>
 				<span>{{Ajouter Thermostat}}</span>
@@ -229,6 +229,6 @@ $eqLogics = eqLogic::byType($plugin->getId());
 </div><!-- /.row row-overflow -->
 
 <!-- Inclusion du fichier javascript du plugin (dossier, nom_du_fichier, extension_du_fichier, id_du_plugin) -->
-<?php include_file('desktop', 'template', 'js', 'template'); ?>
+<?php include_file('desktop', 'plugin-test', 'js', 'plugin-test'); ?>
 <!-- Inclusion du fichier javascript du core - NE PAS MODIFIER NI SUPPRIMER -->
-<?php include_file('core', 'plugin.template', 'js'); ?>
+<?php include_file('core', 'plugin.plugin-test', 'js'); ?>
