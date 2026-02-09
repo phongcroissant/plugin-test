@@ -194,7 +194,7 @@ class plugin-testCmd extends cmd {
   public function execute($_options = array()) {
   }
   public static function test() {
-        log::add('monplugin', 'info', 'Le plugin est bien chargé');
+        log::add('plugin-test', 'info', 'Le plugin est bien chargé');
     }
 
   /*     * **********************Getteur Setteur*************************** */
