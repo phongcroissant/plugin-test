@@ -13,22 +13,22 @@ $eqLogics = eqLogic::byType($plugin->getId());
 	<div class="col-xs-12 eqLogicThumbnailDisplay">
 		<legend><i class="fas fa-cog"></i> {{Gestion}}</legend>
 		<!-- Boutons de gestion du plugin -->
-		<div class="eqLogicThumbnailContainer">
+		<div class="">
 			<div class="cursor eqLogicAction logoPrimary" data-action="add">
 				<i class="fas fa-plus-circle"></i>
 				<br>
 				<span>{{Ajouter}}</span>
+			</div>
+			<div class="cursor logoPrimary" id="btn_add_thermostat">
+				<i class="fas fa-plus-circle"></i>
+				<br>
+				<span>{{Ajouter Thermostat}}</span>
 			</div>
 			<div class="cursor eqLogicAction logoSecondary" data-action="gotoPluginConf">
 				<i class="fas fa-wrench"></i>
 				<br>
 				<span>{{Configuration}}</span>
 			</div>
-		</div>
-		<div class="cursor logoPrimary" id="btn_add_thermostat">
-			<i class="fas fa-plus-circle"></i>
-			<br>
-			<span>{{Ajouter Thermostat}}</span>
 		</div>
 		<legend><i class="fas fa-table"></i> {{Mes templates}}</legend>
 		<?php
