@@ -31,14 +31,6 @@ $("#btn_add_thermostat").on("click", function () {
     .dialog("open");
 });
 
-$("#btn_add_thermostat").on("click", function () {
-  alert("Clic détecté !");
-  $("#md_modal").dialog({ title: "{{Ajouter un thermostat}}" });
-  $("#md_modal")
-    .load("index.php?v=d&plugin=plugin-test&modal=addThermostat")
-    .dialog("open");
-});
-
 /* Fonction permettant l'affichage des commandes dans l'équipement */
 function addCmdToTable(_cmd) {
   if (!isset(_cmd)) {
