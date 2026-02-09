@@ -17,7 +17,13 @@ $eqLogics = eqLogic::byType($plugin->getId());
 			<div class="cursor eqLogicAction logoPrimary" data-action="add">
 				<i class="fas fa-plus-circle"></i>
 				<br>
-				<span>{{Ajouter test}}</span>
+				<span>{{Ajouter}}</span>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">Mon champ perso</label>
+				<div class="col-sm-7">
+					<input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="monChamp" />
+				</div>
 			</div>
 			<div class="cursor eqLogicAction logoSecondary" data-action="gotoPluginConf">
 				<i class="fas fa-wrench"></i>
