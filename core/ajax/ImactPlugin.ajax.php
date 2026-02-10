@@ -39,6 +39,7 @@ try {
       $virtual->setEqType_name('virtual');
       $virtual->setName('LED ' . $i);
       $virtual->setLogicalId('led_' . uniqid());
+      $virtual->setObject_id(2);
       $virtual->setIsEnable(1);
       $virtual->setIsVisible(1);
       $virtual->save();
