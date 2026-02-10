@@ -33,7 +33,7 @@ $("#btn_add_LED").on("click", function () {
 });
 
 function addLED(selectorNbLed) {
-  let nb_led = document.querySelector(selectorNbLed);
+  let nb_led = document.querySelector(selectorNbLed).value();
   if (nb_led <= 0) {
     alert("Saisissez au moins 1 LED");
   } else {
