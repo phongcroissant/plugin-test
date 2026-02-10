@@ -36,6 +36,7 @@ try {
 
     for ($i = 1; $i <= $nbLeds; $i++) {
       $virtual = new virtual();
+      $virtual->setEqType_name('virtual');
       $virtual->setName('LED ' . $i);
       $virtual->setLogicalId('led_' . uniqid());
       $virtual->setIsEnable(1);
