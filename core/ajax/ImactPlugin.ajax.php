@@ -40,7 +40,7 @@ try {
       $virtual->setEqType_name('virtual');
       $virtual->setName($led['name']);
       $virtual->setLogicalId('led_' . uniqid());
-      $virtual->setObject_id(2);
+      $virtual->setObject_id(2); // Objet parent
       $virtual->setIsEnable(1);
       $virtual->setIsVisible(1);
       $virtual->save();
