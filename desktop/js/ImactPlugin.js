@@ -42,15 +42,12 @@ function addChampLED(selectorNbLed) {
     html += "<thead><tr>";
     html += "<th>{{N°}}</th>";
     html += "<th>{{Nom}}</th>";
-    html += "<th>{{Objet parent}}</th>";
     html += "</tr></thead><tbody>";
     for (let i = 1; i <= nb_led; i++) {
       html += "<tr>";
       html += "<td>" + i + "</td>";
       html +=
         '<td><input type="text" class="form-control led-name" placeholder="LED ' +
-        i +
-        '" value="LED ' +
         i +
         '"></td>';
       html += "</tr>";
