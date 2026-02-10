@@ -37,7 +37,7 @@ function addChampLED(selectorNbLed) {
   if (nb_led <= 0) {
     alert("Saisissez au moins 1 LED");
   } else {
-    let container = document.querySelector("array_led");
+    let container = document.querySelector("#array_led");
     let html = '<table class="table table-bordered">';
     html += "<thead><tr>";
     html += "<th>{{N°}}</th>";
