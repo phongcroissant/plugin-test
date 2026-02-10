@@ -11,12 +11,6 @@ if (!isConnect('admin')) {
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
-        <button class="btn btn-success" id="btn_saveLED">{{Valider}}</button>
+        <button class="btn btn-success"onclick="addLED('#LED_number')">{{Valider}}</button>
     </div>
 </div>
-
-<script>
-    $('#btn_saveLED').on('click', function () {
-        addLED('#LED_number')
-    });
-</script>
