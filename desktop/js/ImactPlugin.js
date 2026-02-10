@@ -36,7 +36,7 @@ function addLED(nb_led) {
   if (nb_led <= 0) {
     alert("Saisissez au moins 1 LED");
   } else {
-    alert("Création de " + number + " LED(s)");
+    alert("Création de " + nb_led + " LED(s)");
     $("#md_modal").dialog("close");
   }
 }
