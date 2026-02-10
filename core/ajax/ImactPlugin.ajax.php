@@ -31,7 +31,7 @@ try {
   ajax::init();
 
   if (init('action') == 'addLED') {
-    $nbLeds = init('nbLEDS');
+    $nbLeds = init('nbLeds');
     include_file('core', 'virtual', 'class', 'virtual');
 
     for ($i = 1; $i <= $nbLeds; $i++) {
