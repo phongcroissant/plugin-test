@@ -30,14 +30,14 @@ try {
   */
   ajax::init();
 
-  if (init('action') == 'addLED') {
-    $nbLeds = init('nbLeds');
+  if (init('action') == 'addLEDS') {
+    $leds= json_decode(init('leds'),true);
     include_file('core', 'virtual', 'class', 'virtual');
 
-    for ($i = 1; $i <= $nbLeds; $i++) {
+    foreach ($leds as $led) {
       $virtual = new virtual();
       $virtual->setEqType_name('virtual');
-      $virtual->setName('LED ' . $i);
+      $virtual->setName($led['name']);
       $virtual->setLogicalId('led_' . uniqid());
       $virtual->setObject_id(2);
       $virtual->setIsEnable(1);

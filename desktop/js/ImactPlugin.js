@@ -57,33 +57,36 @@ function addChampLED(selectorNbLed) {
   }
 }
 
-function addLED(selectorNbLed) {
-  let nb_led = document.querySelector(selectorNbLed).value;
-  if (nb_led <= 0) {
-    alert("Saisissez au moins 1 LED");
-  } else {
-    $.ajax({
-      type: "POST",
-      url: "plugins/ImactPlugin/core/ajax/ImactPlugin.ajax.php",
-      data: {
-        action: "addLED",
-        nbLeds: nb_led,
-      },
-      dataType: "json",
-      error: function (request, status, error) {
-        handleAjaxError(request, status, error);
-      },
-      success: function (data) {
-        if (data.state != "ok") {
-          alert(data.result);
-          return;
-        } else {
-          alert("Création de " + nb_led + " LED(s)");
-          $("#md_modal").dialog("close");
-        }
-      },
+function addLED() {
+  let leds = [];
+  let rows = document.querySelector("#led_array tbody tr");
+  rows.forEach(function (row) {
+    let name = row.querySelector(".led-name").value;
+    leds.push({ name: name });
+  });
+
+  fetch("plugins/ImactPlugin/core/ajax/ImactPlugin.ajax.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-urlencoded" },
+    body: new URLSearchParams({
+      action: "addLEDS",
+      leds: JSON.stringify(leds),
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.state === "ok") {
+        alert(leds.length + " LED(s) créée(s) avec succès");
+        document.querySelector("#md_modal").style.display = "none";
+        location.reload();
+      } else {
+        alert(data.result);
+      }
+    })
+    .catch((error) => {
+      console.error("Erreur:", error);
+      alert("Erreur lors de la création");
     });
-  }
 }
 
 /* Fonction permettant l'affichage des commandes dans l'équipement */
