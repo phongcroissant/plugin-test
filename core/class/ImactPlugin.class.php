@@ -1,24 +1,25 @@
 <?php
 /* This file is part of Jeedom.
-*
-* Jeedom is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* Jeedom is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
-*/
+ *
+ * Jeedom is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Jeedom is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
+ */
 
 /* * ***************************Includes********************************* */
-require_once __DIR__  . '/../../../../core/php/core.inc.php';
+require_once __DIR__ . '/../../../../core/php/core.inc.php';
 
-class ImactPlugin extends eqLogic {
+class ImactPlugin extends eqLogic
+{
   /*     * *************************Attributs****************************** */
 
   /*
@@ -69,7 +70,7 @@ class ImactPlugin extends eqLogic {
   * Fonction exécutée automatiquement tous les jours par Jeedom
   public static function cronDaily() {}
   */
-  
+
   /*
   * Permet de déclencher une action avant modification d'une variable de configuration du plugin
   * Exemple avec la variable "param3"
@@ -100,56 +101,64 @@ class ImactPlugin extends eqLogic {
   /*     * *********************Méthodes d'instance************************* */
 
   // Fonction exécutée automatiquement avant la création de l'équipement
-  public function preInsert() {
+  public function preInsert()
+  {
   }
 
   // Fonction exécutée automatiquement après la création de l'équipement
-  public function postInsert() {
+  public function postInsert()
+  {
   }
 
   // Fonction exécutée automatiquement avant la mise à jour de l'équipement
-  public function preUpdate() {
+  public function preUpdate()
+  {
   }
 
   // Fonction exécutée automatiquement après la mise à jour de l'équipement
-  public function postUpdate() {
+  public function postUpdate()
+  {
   }
 
   // Fonction exécutée automatiquement avant la sauvegarde (création ou mise à jour) de l'équipement
-  public function preSave() {
+  public function preSave()
+  {
   }
 
   // Fonction exécutée automatiquement après la sauvegarde (création ou mise à jour) de l'équipement
-  public function postSave() {
-  $info = $this->getCmd(null, 'story');
-  if (!is_object($info)) {
-    $info = new vdmCmd();
-    $info->setName(__('Histoire', __FILE__));
-  }
-  $info->setLogicalId('story');
-  $info->setEqLogic_id($this->getId());
-  $info->setType('info');
-  $info->setSubType('string');
-  $info->save();
+  public function postSave()
+  {
+    $info = $this->getCmd(null, 'story');
+    if (!is_object($info)) {
+      $info = new vdmCmd();
+      $info->setName(__('Histoire', __FILE__));
+    }
+    $info->setLogicalId('story');
+    $info->setEqLogic_id($this->getId());
+    $info->setType('info');
+    $info->setSubType('string');
+    $info->save();
 
-  $refresh = $this->getCmd(null, 'refresh');
-  if (!is_object($refresh)) {
-    $refresh = new vdmCmd();
-    $refresh->setName(__('Rafraichir', __FILE__));
+    $refresh = $this->getCmd(null, 'refresh');
+    if (!is_object($refresh)) {
+      $refresh = new vdmCmd();
+      $refresh->setName(__('Rafraichir', __FILE__));
+    }
+    $refresh->setEqLogic_id($this->getId());
+    $refresh->setLogicalId('refresh');
+    $refresh->setType('action');
+    $refresh->setSubType('other');
+    $refresh->save();
   }
-  $refresh->setEqLogic_id($this->getId());
-  $refresh->setLogicalId('refresh');
-  $refresh->setType('action');
-  $refresh->setSubType('other');
-  $refresh->save();
-}
 
   // Fonction exécutée automatiquement avant la suppression de l'équipement
-  public function preRemove() {
+  public function preRemove()
+  {
   }
 
   // Fonction exécutée automatiquement après la suppression de l'équipement
-  public function postRemove() {
+  public function postRemove()
+  {
   }
 
   /*
@@ -171,7 +180,8 @@ class ImactPlugin extends eqLogic {
   /*     * **********************Getteur Setteur*************************** */
 }
 
-class plugin-testCmd extends cmd {
+class ImactPluginCmd extends cmd
+{
   /*     * *************************Attributs****************************** */
 
   /*
@@ -191,11 +201,9 @@ class plugin-testCmd extends cmd {
   */
 
   // Exécution d'une commande
-  public function execute($_options = array()) {
+  public function execute($_options = array())
+  {
   }
-  public static function test() {
-        log::add('plugin-test', 'info', 'Le plugin est bien chargé');
-    }
 
   /*     * **********************Getteur Setteur*************************** */
 }

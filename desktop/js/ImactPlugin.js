@@ -27,7 +27,7 @@ $("#table_cmd").sortable({
 $("#btn_add_thermostat").on("click", function () {
   $("#md_modal").dialog({ title: "{{Ajouter un thermostat}}" });
   $("#md_modal")
-    .load("index.php?v=d&plugin=plugin-test&modal=addThermostat")
+    .load("index.php?v=d&plugin=ImactPlugin&modal=addThermostat")
     .dialog("open");
 });
 

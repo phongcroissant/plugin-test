@@ -49,10 +49,10 @@
   "category": "programming",
   "hasDependency": false,
   "hasOwnDeamon": false,
-  "changelog_beta": "https://doc.jeedom.com/#language#/plugins/programming/plugin-test/beta/changelog",
-  "changelog": "https://doc.jeedom.com/#language#/plugins/programming/plugin-test/changelog",
-  "documentation_beta": "https://doc.jeedom.com/#language#/plugins/programming/plugin-test/beta",
-  "documentation": "https://doc.jeedom.com/#language#/plugins/programming/plugin-test",
+  "changelog_beta": "https://doc.jeedom.com/#language#/plugins/programming/ImactPlugin/beta/changelog",
+  "changelog": "https://doc.jeedom.com/#language#/plugins/programming/ImactPlugin/changelog",
+  "documentation_beta": "https://doc.jeedom.com/#language#/plugins/programming/ImactPlugin/beta",
+  "documentation": "https://doc.jeedom.com/#language#/plugins/programming/ImactPlugin",
   "link": {
     "forum": "Lien vers le forum",
     "video": "Lien vers une video"

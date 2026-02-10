@@ -1,23 +1,19 @@
 {
-  "pre-install": {
-  },
-  "apt": {
-  },
+  "pre-install": {},
+  "apt": {},
   "pip3": {
-    "pyserial" : {"reinstall" : true},
-    "requests" : {"reinstall" : true}
+    "pyserial": { "reinstall": true },
+    "requests": { "reinstall": true }
   },
   "npm": {
-    "plugins/plugin-test/ressources/demond"  : {}
+    "plugins/ImactPlugin/ressources/demond": {}
   },
   "composer": {
-       "plugins/plugin-test"  : {}
+    "plugins/ImactPlugin": {}
   },
   "yarn": {
-    "plugins/plugin-test/ressources/demond"  : {}
+    "plugins/ImactPlugin/ressources/demond": {}
   },
-  "plugin": {
-  },
-  "post-install": {
-  }
+  "plugin": {},
+  "post-install": {}
 }
