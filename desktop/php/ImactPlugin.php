@@ -229,6 +229,6 @@ $eqLogics = eqLogic::byType($plugin->getId());
 </div><!-- /.row row-overflow -->
 
 <!-- Inclusion du fichier javascript du plugin (dossier, nom_du_fichier, extension_du_fichier, id_du_plugin) -->
-<?php include_file('desktop', 'plugin-test', 'js', 'plugin-test'); ?>
+<?php include_file('desktop', 'ImactPlugin', 'js', 'ImactPlugin'); ?>
 <!-- Inclusion du fichier javascript du core - NE PAS MODIFIER NI SUPPRIMER -->
-<?php include_file('core', 'plugin.plugin-test', 'js'); ?>
+<?php include_file('core', 'plugin.ImactPlugin', 'js'); ?>
