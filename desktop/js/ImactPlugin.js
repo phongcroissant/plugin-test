@@ -24,17 +24,27 @@ $("#table_cmd").sortable({
   forcePlaceholderSize: true,
 });
 
-$("#btn_add_thermostat").on("click", function () {
-  $("#md_modal").dialog({ title: "{{Ajouter un thermostat}}" });
+// Pop-up du bouton Ajouter Led
+$("#btn_add_LED").on("click", function () {
+  $("#md_modal").dialog({ title: "{{Ajouter LED}}" });
   $("#md_modal")
-    .load("index.php?v=d&plugin=ImactPlugin&modal=addThermostat")
+    .load("index.php?v=d&plugin=ImactPlugin&modal=addLED")
     .dialog("open");
 });
+
+function addLED(nb_led) {
+  if (nb_led <= 0) {
+    alert("Saisissez au moins 1 LED");
+  } else {
+    alert("Création de " + number + " LED(s)");
+    $("#md_modal").dialog("close");
+  }
+}
 
 /* Fonction permettant l'affichage des commandes dans l'équipement */
 function addCmdToTable(_cmd) {
   if (!isset(_cmd)) {
-    var _cmd = { configuration: {} };
+    let _cmd = { configuration: {} };
   }
   if (!isset(_cmd.configuration)) {
     _cmd.configuration = {};
