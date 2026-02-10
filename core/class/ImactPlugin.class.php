@@ -18,7 +18,7 @@
 /* * ***************************Includes********************************* */
 require_once __DIR__  . '/../../../../core/php/core.inc.php';
 
-class plugin-test extends eqLogic {
+class ImactPlugin extends eqLogic {
   /*     * *************************Attributs****************************** */
 
   /*
