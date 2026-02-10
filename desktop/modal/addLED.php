@@ -11,6 +11,10 @@ if (!isConnect('admin')) {
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-success"onclick="addChampLED('#LED_number')">{{Valider Nombre}}</button>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
         <button class="btn btn-success"onclick="addLED('#LED_number')">{{Valider}}</button>
     </div>
 </div>
