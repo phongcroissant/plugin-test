@@ -32,7 +32,8 @@ $("#btn_add_LED").on("click", function () {
     .dialog("open");
 });
 
-function addLED(nb_led) {
+function addLED(selector) {
+  let nb_led = $(selector).val();
   if (nb_led <= 0) {
     alert("Saisissez au moins 1 LED");
   } else {
