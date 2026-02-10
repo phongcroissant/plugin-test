@@ -67,7 +67,7 @@ function addLED() {
 
   fetch("plugins/ImactPlugin/core/ajax/ImactPlugin.ajax.php", {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-urlencoded" },
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
       action: "addLEDS",
       leds: JSON.stringify(leds),

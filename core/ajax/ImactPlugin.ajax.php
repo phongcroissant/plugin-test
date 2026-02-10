@@ -31,8 +31,9 @@ try {
   ajax::init();
 
   if (init('action') == 'addLEDS') {
-    $leds= json_decode(init('leds'),true);
+    $leds = json_decode(init('leds'), true);
     include_file('core', 'virtual', 'class', 'virtual');
+    $ledCreated = 0;
 
     foreach ($leds as $led) {
       $virtual = new virtual();
@@ -43,8 +44,10 @@ try {
       $virtual->setIsEnable(1);
       $virtual->setIsVisible(1);
       $virtual->save();
+      $ledCreated++;
+
     }
-    ajax::success($nbLeds . ' objet(s) créé(s) avec succès');
+    ajax::success($ledCreated . ' objet(s) créé(s) avec succès');
   }
 
   throw new Exception(__('Aucune méthode correspondante à', __FILE__) . ' : ' . init('action'));
