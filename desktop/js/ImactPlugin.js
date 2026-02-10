@@ -37,8 +37,27 @@ function addLED(selector) {
   if (nb_led <= 0) {
     alert("Saisissez au moins 1 LED");
   } else {
-    alert("Création de " + nb_led + " LED(s)");
-    $("#md_modal").dialog("close");
+    $.ajax({
+      type: "POST",
+      url: "plugins/ImactPlugin/core/ajax/ImactPlugin.ajax.php",
+      data: {
+        action: "addLED",
+        nbLeds: nb_led,
+      },
+      dataType: "json",
+      error: function (request, status, error) {
+        handleAjaxError(request, status, error);
+      },
+      success: function (data) {
+        if (data.state != "ok") {
+          alert(data.result);
+          return;
+        } else {
+          alert("Création de " + nb_led + " LED(s)");
+          $("#md_modal").dialog("close");
+        }
+      },
+    });
   }
 }
 
