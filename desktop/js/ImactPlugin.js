@@ -60,7 +60,7 @@ function addChampLED(selectorNbLed) {
 function addLED() {
   let leds = [];
   let rows = document.querySelector("#led_array tbody tr");
-  rows.forEach(function (row) {
+  rows.forEach((row) => {
     let name = row.querySelector(".led-name").value;
     leds.push({ name: name });
   });
