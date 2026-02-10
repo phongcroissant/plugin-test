@@ -32,6 +32,34 @@ $("#btn_add_LED").on("click", function () {
     .dialog("open");
 });
 
+function addChampLED(selectorNbLed) {
+  let nb_led = document.querySelector(selectorNbLed).value;
+  if (nb_led <= 0) {
+    alert("Saisissez au moins 1 LED");
+  } else {
+    let container = document.querySelector("array_led");
+    let html = '<table class="table table-bordered">';
+    html += "<thead><tr>";
+    html += "<th>{{N°}}</th>";
+    html += "<th>{{Nom}}</th>";
+    html += "<th>{{Objet parent}}</th>";
+    html += "</tr></thead><tbody>";
+    for (let i = 1; i <= nb_led; i++) {
+      html += "<tr>";
+      html += "<td>" + i + "</td>";
+      html +=
+        '<td><input type="text" class="form-control led-name" placeholder="LED ' +
+        i +
+        '" value="LED ' +
+        i +
+        '"></td>';
+      html += "</tr>";
+    }
+    html += "</tbody></table>";
+    container.innerHTML = html;
+  }
+}
+
 function addLED(selectorNbLed) {
   let nb_led = document.querySelector(selectorNbLed).value;
   if (nb_led <= 0) {
