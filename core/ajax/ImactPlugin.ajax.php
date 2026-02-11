@@ -55,29 +55,29 @@ try {
       $cmd->setIsHistorized(1);
       $cmd->save();
 
-      // $cmdOn = new virtualCmd();
-      // $cmdOn->setName('On');
-      // $cmdOn->setSubName('Etat');
-      // $cmdOn->setEqLogic_id($virtual->getId());
-      // $cmdOn->setType('action');
-      // $cmdOn->setLogicalId('on');
-      // $cmdOn->setSubType('other');
-      // $cmdOn->setValue("Etat");
-      // $cmdOn->setSubValue(1);
-      // $cmdOn->setIsVisible(1);
-      // $cmdOn->save();
+      $cmdOn = new virtualCmd();
+      $cmdOn->setName('On');
+      $cmdOn->setSubName('Etat');
+      $cmdOn->setEqLogic_id($virtual->getId());
+      $cmdOn->setType('action');
+      $cmdOn->setLogicalId('on');
+      $cmdOn->setSubType('other');
+      $cmdOn->setValue("Etat");
+      $cmdOn->setSubValue(1);
+      $cmdOn->setIsVisible(1);
+      $cmdOn->save();
 
-      // $cmdOff = new virtualCmd();
-      // $cmdOff->setName('Off');
-      // $cmdOff->setSubName('Etat');
-      // $cmdOff->setEqLogic_id($virtual->getId());
-      // $cmdOff->setType('action');
-      // $cmdOff->setLogicalId('off');
-      // $cmdOff->setSubType('other');
-      // $cmdOff->setValue("Etat");
-      // $cmdOff->setSubValue(1);
-      // $cmdOff->setIsVisible(1);
-      // $cmdOff->save();
+      $cmdOff = new virtualCmd();
+      $cmdOff->setName('Off');
+      $cmdOff->setSubName('Etat');
+      $cmdOff->setEqLogic_id($virtual->getId());
+      $cmdOff->setType('action');
+      $cmdOff->setLogicalId('off');
+      $cmdOff->setSubType('other');
+      $cmdOff->setValue("Etat");
+      $cmdOff->setSubValue(1);
+      $cmdOff->setIsVisible(1);
+      $cmdOff->save();
 
       $ledCreated++;
 
