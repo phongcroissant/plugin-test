@@ -52,6 +52,7 @@ try {
       $cmdEtat->setLogicalId('etat');
       $cmdEtat->setSubType('binary');
       $cmdEtat->setIsVisible(1);
+      $cmdEtat->setIsHistorized(1);
       $cmdEtat->save();
 
       $cmdOn = new virtualCmd();
@@ -59,13 +60,19 @@ try {
       $cmdOn->setEqLogic_id($virtual->getId());
       $cmdOn->setType('action');
       $cmdOn->setSubType('other');
+
+      // ⚠️ OBLIGATOIRE pour Virtual
+      $cmdOn->setValue($cmdEtat->getId());
+
       $cmdOn->setConfiguration('actionReturnCmd', array(
         array(
           'cmd' => $cmdEtat->getId(),
           'value' => 1
         )
       ));
+
       $cmdOn->save();
+
 
       // $cmdOff = new virtualCmd();
       // $cmdOff->setName('Off');
