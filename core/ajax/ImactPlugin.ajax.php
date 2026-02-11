@@ -36,6 +36,8 @@ try {
     $ledCreated = 0;
 
     foreach ($leds as $led) {
+
+      // Création du Virtual
       $virtual = new virtual();
       $virtual->setEqType_name('virtual');
       $virtual->setName($led['name']);
@@ -45,49 +47,40 @@ try {
       $virtual->setIsVisible(1);
       $virtual->save();
 
+      // Commande info
       $cmdEtat = new virtualCmd();
-      $cmdEtat->setName('Etat');
       $cmdEtat->setEqLogic_id($virtual->getId());
+      $cmdEtat->setName('Etat');
       $cmdEtat->setType('info');
-      $cmdEtat->setLogicalId('etat');
       $cmdEtat->setSubType('binary');
+      $cmdEtat->setLogicalId('etat');
       $cmdEtat->setIsVisible(1);
-      $cmdEtat->setIsHistorized(1);
       $cmdEtat->save();
 
+      // Commande action ON
       $cmdOn = new virtualCmd();
-      $cmdOn->setName('On');
       $cmdOn->setEqLogic_id($virtual->getId());
+      $cmdOn->setName('On');
       $cmdOn->setType('action');
       $cmdOn->setSubType('other');
+      $cmdOn->setLogicalId('on');
 
-      // ⚠️ OBLIGATOIRE pour Virtual
+      // Liaison OBLIGATOIRE
       $cmdOn->setValue($cmdEtat->getId());
-
-      $cmdOn->setConfiguration('actionReturnCmd', array(
-        array(
-          'cmd' => $cmdEtat->getId(),
-          'value' => 1
-        )
-      ));
 
       $cmdOn->save();
 
-
-      // $cmdOff = new virtualCmd();
-      // $cmdOff->setName('Off');
-      // $cmdOff->setEqLogic_id($virtual->getId());
-      // $cmdOff->setType('action');
-      // $cmdOff->setLogicalId('off');
-      // $cmdOff->setSubType('other');
-      // $cmdOff->setValue($cmd->getId());
-      // $cmdOff->setConfiguration('updateCmdId', $cmd->getId());
-      // $cmdOff->setConfiguration('updateCmdToValue', 0);
-      // $cmdOff->setIsVisible(1);
-      // $cmdOff->save();
+      // Commande action OFF
+      $cmdOff = new virtualCmd();
+      $cmdOff->setEqLogic_id($virtual->getId());
+      $cmdOff->setName('Off');
+      $cmdOff->setType('action');
+      $cmdOff->setSubType('other');
+      $cmdOff->setLogicalId('off');
+      $cmdOff->setValue($cmdEtat->getId());
+      $cmdOff->save();
 
       $ledCreated++;
-
     }
     ajax::success($ledCreated . ' objet(s) créé(s) avec succès');
   }
