@@ -61,15 +61,15 @@ try {
 
 
       // // Commande action ON
-      // $cmdOn = new virtualCmd();
-      // $cmdOn->setEqLogic_id($virtual->getId());
-      // $cmdOn->setName('On');
-      // $cmdOn->setType('action');
-      // $cmdOn->setSubType('other');
-      // $cmdOn->setLogicalId('on');
+      $cmdOn = new virtualCmd();
+      $cmdOn->setEqLogic_id($virtual->getId());
+      $cmdOn->setName('On');
+      $cmdOn->setType('action');
+      $cmdOn->setSubType('other');
+      $cmdOn->setLogicalId('on');
+      $cmdOn->setConfiguration('virtualAction', '#etat#');
 
-      // // Liaison OBLIGATOIRE
-      // $cmdOn->setValue($cmdEtat->getId());
+
 
       // $cmdOn->save();
 
