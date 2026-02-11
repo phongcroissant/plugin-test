@@ -50,8 +50,10 @@ try {
       $cmd->setEqLogic_id($virtual->getId());
       $cmd->setType('info');
       $cmd->setSubType('binary');
+      $cmd->setIsVisible(0);
+      $cmd->setHistorized(1);
       $cmd->save();
-      
+
       $ledCreated++;
 
     }
