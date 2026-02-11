@@ -60,6 +60,7 @@ try {
       $cmdOn->setEqLogic_id($virtual->getId());
       $cmdOn->setType('action');
       $cmdOn->setSubType('other');
+      $cmdOn->setValue($cmd->getId());
       $cmdOn->setConfiguration('actionReturnCmd', array(
         array(
           'cmd' => $cmd->getId(),
@@ -68,17 +69,17 @@ try {
       ));
       $cmdOn->save();
 
-      $cmdOff = new virtualCmd();
-      $cmdOff->setName('Off');
-      $cmdOff->setEqLogic_id($virtual->getId());
-      $cmdOff->setType('action');
-      $cmdOff->setLogicalId('off');
-      $cmdOff->setSubType('other');
-      $cmdOff->setValue($cmd->getId());
-      $cmdOff->setConfiguration('updateCmdId', $cmd->getId());
-      $cmdOff->setConfiguration('updateCmdToValue', 0);
-      $cmdOff->setIsVisible(1);
-      $cmdOff->save();
+      // $cmdOff = new virtualCmd();
+      // $cmdOff->setName('Off');
+      // $cmdOff->setEqLogic_id($virtual->getId());
+      // $cmdOff->setType('action');
+      // $cmdOff->setLogicalId('off');
+      // $cmdOff->setSubType('other');
+      // $cmdOff->setValue($cmd->getId());
+      // $cmdOff->setConfiguration('updateCmdId', $cmd->getId());
+      // $cmdOff->setConfiguration('updateCmdToValue', 0);
+      // $cmdOff->setIsVisible(1);
+      // $cmdOff->save();
 
       $ledCreated++;
 
