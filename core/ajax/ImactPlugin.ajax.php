@@ -61,9 +61,13 @@ try {
       $cmdOn->setType('action');
       $cmdOn->setLogicalId('on');
       $cmdOn->setSubType('other');
-      $cmdOn->setConfiguration('virtualAction', '1');
-      $cmdOn->setConfiguration('updateCmdId', $cmd->getId());
-      $cmdOn->setConfiguration('updateCmdToValue', 1);
+      $cmdOn->setConfiguration('actionCheckCmd', array(
+        array(
+          'cmd' => $cmd->getId(),
+          'options' => array(),
+          'enable' => 1
+        )
+      ));
       $cmdOn->setIsVisible(1);
       $cmdOn->save();
 
