@@ -157,58 +157,7 @@ class ImactPlugin extends eqLogic
   public function toHtml($_version = 'dashboard') {}
   */
   public function addLEDS($leds){
-    plugin::byId('virtual')->includeClass();
-
-    foreach ($leds as $led) {
-
-      // Création de l'équipement virtuel
-      $virtual = new virtual();
-      $virtual->setEqType_name('virtual');
-      $virtual->setName($led['name']);
-      $virtual->setLogicalId('');
-      $virtual->setObject_id(2);
-      $virtual->setIsEnable(1);
-      $virtual->setIsVisible(1);
-      $virtual->save();
-
-      // 1) Création de la commande info
-      $cmdEtat = new virtualCmd();
-      $cmdEtat->setEqLogic_id($virtual->getId());
-      $cmdEtat->setName('Etat');
-      $cmdEtat->setType('info');
-      $cmdEtat->setSubType('binary');
-      $cmdEtat->setLogicalId('etat');
-      $cmdEtat->setIsVisible(1);
-      $cmdEtat->setConfiguration('virtualInfo', '');
-      $cmdEtat->save();
-
-      // 2) IMPORTANT : recharger l'équipement après la création de la commande info
-      $virtual = virtual::byId($virtual->getId());
-
-      // 3) Création de la commande action ON
-      // $cmdOn = new virtualCmd();
-      // $cmdOn->setEqLogic_id($virtual->getId());
-      // $cmdOn->setName('On');
-      // $cmdOn->setType('action');
-      // $cmdOn->setSubType('other');
-      // $cmdOn->setLogicalId('on');
-      // $cmdOn->setIsVisible(1);
-      // $cmdOn->setConfiguration('virtualAction', '#etat#');
-      // $cmdOn->setValue($cmdEtat->getId());
-      // $cmdOn->save();
-
-
-      // // Commande action OFF
-      // $cmdOff = new virtualCmd();
-      // $cmdOff->setEqLogic_id($virtual->getId());
-      // $cmdOff->setName('Off');
-      // $cmdOff->setType('action');
-      // $cmdOff->setSubType('other');
-      // $cmdOff->setLogicalId('off');
-      // $cmdOff->setValue($cmdEtat->getId());
-      // $cmdOff->save();
-
-    }
+    
   }
 
   /*     * **********************Getteur Setteur*************************** */
