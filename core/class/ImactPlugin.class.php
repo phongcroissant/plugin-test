@@ -128,27 +128,7 @@ class ImactPlugin extends eqLogic
   // Fonction exécutée automatiquement après la sauvegarde (création ou mise à jour) de l'équipement
   public function postSave()
   {
-    $info = $this->getCmd(null, 'story');
-    if (!is_object($info)) {
-      $info = new vdmCmd();
-      $info->setName(__('Histoire', __FILE__));
-    }
-    $info->setLogicalId('story');
-    $info->setEqLogic_id($this->getId());
-    $info->setType('info');
-    $info->setSubType('string');
-    $info->save();
-
-    $refresh = $this->getCmd(null, 'refresh');
-    if (!is_object($refresh)) {
-      $refresh = new vdmCmd();
-      $refresh->setName(__('Rafraichir', __FILE__));
-    }
-    $refresh->setEqLogic_id($this->getId());
-    $refresh->setLogicalId('refresh');
-    $refresh->setType('action');
-    $refresh->setSubType('other');
-    $refresh->save();
+    
   }
 
   // Fonction exécutée automatiquement avant la suppression de l'équipement
