@@ -64,7 +64,6 @@ try {
       $cmdOn->setEqLogic_id($virtual->getId());
       $cmdOn->setType('action');
       $cmdOn->setSubType('other');
-      $cmdOn->setValue($cmd->getId());
       $cmdOn->setConfiguration('actionReturnCmd', array(
         array(
           'cmd' => $cmd->getId(),
