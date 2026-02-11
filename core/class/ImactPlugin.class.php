@@ -186,16 +186,16 @@ class ImactPlugin extends eqLogic
       $virtual = virtual::byId($virtual->getId());
 
       // 3) Création de la commande action ON
-      $cmdOn = new virtualCmd();
-      $cmdOn->setEqLogic_id($virtual->getId());
-      $cmdOn->setName('On');
-      $cmdOn->setType('action');
-      $cmdOn->setSubType('other');
-      $cmdOn->setLogicalId('on');
-      $cmdOn->setIsVisible(1);
-      $cmdOn->setConfiguration('virtualAction', '#etat#');
-      $cmdOn->setValue($cmdEtat->getId());
-      $cmdOn->save();
+      // $cmdOn = new virtualCmd();
+      // $cmdOn->setEqLogic_id($virtual->getId());
+      // $cmdOn->setName('On');
+      // $cmdOn->setType('action');
+      // $cmdOn->setSubType('other');
+      // $cmdOn->setLogicalId('on');
+      // $cmdOn->setIsVisible(1);
+      // $cmdOn->setConfiguration('virtualAction', '#etat#');
+      // $cmdOn->setValue($cmdEtat->getId());
+      // $cmdOn->save();
 
 
       // // Commande action OFF
