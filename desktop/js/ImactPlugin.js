@@ -54,10 +54,18 @@ function addChampLED(selectorNbLed) {
     }
     html += "</tbody></table>";
     container.innerHTML = html;
+    
   }
 }
 
 function addLED() {
+  document.querySelectorAll('.led-name').forEach(input => {
+    if (input.value.trim() === '') {
+        input.classList.add('is-invalid');
+    } else {
+        input.classList.remove('is-invalid');
+    }
+});
   let leds = [];
   let rows = document.querySelectorAll("#led_array tbody tr");
   rows.forEach((row) => {
