@@ -33,7 +33,6 @@ try {
   if (init('action') == 'addLEDS') {
     $leds = json_decode(init('leds'), true);
     include_file('core', 'virtual', 'class', 'virtual');
-    include_file('core', 'virtualCmd', 'class', 'virtual');
 
     $ledCreated = 0;
 
@@ -43,7 +42,7 @@ try {
       $virtual = new virtual();
       $virtual->setEqType_name('virtual');
       $virtual->setName($led['name']);
-      $virtual->setLogicalId('led_' . uniqid());
+      $virtual->setLogicalId('');
       $virtual->setObject_id(2);
       $virtual->setIsEnable(1);
       $virtual->setIsVisible(1);
