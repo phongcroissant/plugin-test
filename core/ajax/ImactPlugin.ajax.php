@@ -37,7 +37,7 @@ try {
 
     foreach ($leds as $led) {
 
-      // Création du Virtual
+      // Création de l'équipement virtuel
       $virtual = new virtual();
       $virtual->setEqType_name('virtual');
       $virtual->setName($led['name']);
@@ -47,7 +47,7 @@ try {
       $virtual->setIsVisible(1);
       $virtual->save();
 
-      // Commande info
+      // 1) Création de la commande info
       $cmdEtat = new virtualCmd();
       $cmdEtat->setEqLogic_id($virtual->getId());
       $cmdEtat->setName('Etat');
@@ -55,22 +55,23 @@ try {
       $cmdEtat->setSubType('binary');
       $cmdEtat->setLogicalId('etat');
       $cmdEtat->setIsVisible(1);
+      $cmdEtat->setConfiguration('virtualInfo', '');
       $cmdEtat->save();
+
+      // 2) IMPORTANT : recharger l'équipement après la création de la commande info
       $virtual = virtual::byId($virtual->getId());
 
-
-      // // Commande action ON
+      // 3) Création de la commande action ON
       $cmdOn = new virtualCmd();
       $cmdOn->setEqLogic_id($virtual->getId());
       $cmdOn->setName('On');
       $cmdOn->setType('action');
       $cmdOn->setSubType('other');
       $cmdOn->setLogicalId('on');
+      $cmdOn->setIsVisible(1);
       $cmdOn->setConfiguration('virtualAction', '#etat#');
-
-
-
       $cmdOn->save();
+
 
       // // Commande action OFF
       // $cmdOff = new virtualCmd();
