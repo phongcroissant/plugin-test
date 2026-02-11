@@ -70,6 +70,7 @@ try {
       $cmdOn->setLogicalId('on');
       $cmdOn->setIsVisible(1);
       $cmdOn->setConfiguration('virtualAction', '#etat#');
+      $cmdOn->setValue($cmdEtat->getId());
       $cmdOn->save();
 
 
