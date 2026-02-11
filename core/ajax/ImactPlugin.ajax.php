@@ -57,28 +57,31 @@ try {
       $cmdEtat->setIsVisible(1);
       $cmdEtat->save();
 
-      // Commande action ON
-      $cmdOn = new virtualCmd();
-      $cmdOn->setEqLogic_id($virtual->getId());
-      $cmdOn->setName('On');
-      $cmdOn->setType('action');
-      $cmdOn->setSubType('other');
-      $cmdOn->setLogicalId('on');
+      log::add('test', 'info', 'ID ETAT = ' . $cmdEtat->getId());
 
-      // Liaison OBLIGATOIRE
-      $cmdOn->setValue($cmdEtat->getId());
 
-      $cmdOn->save();
+      // // Commande action ON
+      // $cmdOn = new virtualCmd();
+      // $cmdOn->setEqLogic_id($virtual->getId());
+      // $cmdOn->setName('On');
+      // $cmdOn->setType('action');
+      // $cmdOn->setSubType('other');
+      // $cmdOn->setLogicalId('on');
 
-      // Commande action OFF
-      $cmdOff = new virtualCmd();
-      $cmdOff->setEqLogic_id($virtual->getId());
-      $cmdOff->setName('Off');
-      $cmdOff->setType('action');
-      $cmdOff->setSubType('other');
-      $cmdOff->setLogicalId('off');
-      $cmdOff->setValue($cmdEtat->getId());
-      $cmdOff->save();
+      // // Liaison OBLIGATOIRE
+      // $cmdOn->setValue($cmdEtat->getId());
+
+      // $cmdOn->save();
+
+      // // Commande action OFF
+      // $cmdOff = new virtualCmd();
+      // $cmdOff->setEqLogic_id($virtual->getId());
+      // $cmdOff->setName('Off');
+      // $cmdOff->setType('action');
+      // $cmdOff->setSubType('other');
+      // $cmdOff->setLogicalId('off');
+      // $cmdOff->setValue($cmdEtat->getId());
+      // $cmdOff->save();
 
       $ledCreated++;
     }
