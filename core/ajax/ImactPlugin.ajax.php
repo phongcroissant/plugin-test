@@ -57,6 +57,8 @@ try {
       $cmd->setIsHistorized(1);
       $cmd->save();
 
+      $cmd = virtualCmd::byId($cmd->getId());
+
       $cmdOn = new virtualCmd();
       $cmdOn->setName('On');
       $cmdOn->setEqLogic_id($virtual->getId());
