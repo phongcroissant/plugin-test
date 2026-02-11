@@ -67,6 +67,17 @@ try {
       $cmdOn->setIsVisible(1);
       $cmdOn->save();
 
+      $cmdOff = new virtualCmd();
+      $cmdOff->setName('Off');
+      $cmdOff->setSubName('Etat');
+      $cmdOff->setEqLogic_id($virtual->getId());
+      $cmdOff->setType('action');
+      $cmdOff->setLogicalId('off');
+      $cmdOff->setSubType('other');
+      $cmdOff->setValue("Etat");
+      $cmdOff->setSubValue(1);
+      $cmdOff->setIsVisible(1);
+      $cmdOff->save();
 
       $ledCreated++;
 
