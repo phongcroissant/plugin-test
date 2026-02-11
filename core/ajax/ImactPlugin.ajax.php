@@ -71,7 +71,7 @@ try {
 
 
 
-      // $cmdOn->save();
+      $cmdOn->save();
 
       // // Commande action OFF
       // $cmdOff = new virtualCmd();
