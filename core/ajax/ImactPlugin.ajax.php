@@ -49,19 +49,23 @@ try {
       $cmd->setName('Etat');
       $cmd->setEqLogic_id($virtual->getId());
       $cmd->setType('info');
+      $cmd->setLogicalId('etat');
       $cmd->setSubType('binary');
       $cmd->setIsVisible(0);
       $cmd->setIsHistorized(1);
       $cmd->save();
 
-      $cmd = new virtualCmd();
-      $cmd->setName('On');
-      $cmd->setEqLogic_id($virtual->getId());
-      $cmd->setType('action');
-      $cmd->setSubType('default');
-      $cmd->value = 1;
-      $cmd->setIsVisible(0);
-      $cmd->save();
+      $cmdOn = new virtualCmd();
+      $cmdOn->setName('On');
+      $cmdOn->setSubName('Etat');
+      $cmdOn->setEqLogic_id($virtual->getId());
+      $cmdOn->setType('action');
+      $cmdOn->setLogicalId('on');
+      $cmdOn->setSubType('other');
+      $cmdOn->setValue("Etat");
+      $cmdOn->setSubValue(1);
+      $cmdOn->setIsVisible(1);
+      $cmdOn->save();
 
 
       $ledCreated++;
