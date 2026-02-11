@@ -45,6 +45,8 @@ try {
       $virtual->setIsVisible(1);
       $virtual->save();
 
+      $virtual = virtual::byId($virtual->getId());
+
       $cmd = new virtualCmd();
       $cmd->setName('Etat');
       $cmd->setEqLogic_id($virtual->getId());
