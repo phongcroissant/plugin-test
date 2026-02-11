@@ -56,8 +56,7 @@ try {
       $cmdEtat->setLogicalId('etat');
       $cmdEtat->setIsVisible(1);
       $cmdEtat->save();
-
-      log::add('test', 'info', 'ID ETAT = ' . $cmdEtat->getId());
+      $virtual = virtual::byId($virtual->getId());
 
 
       // // Commande action ON
