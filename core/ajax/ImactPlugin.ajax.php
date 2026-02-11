@@ -29,7 +29,7 @@ try {
     En V4 : autoriser l'exécution d'une méthode 'action' en GET en indiquant le(s) nom(s) de(s) action(s) dans un tableau en argument
   */
   ajax::init();
-
+  // $led_template=file_get_contents('./desktop/json/led_template.json');
   if (init('action') == 'addLEDS') {
     $leds = json_decode(init('leds'), true);
     include_file('core', 'virtual', 'class', 'virtual');
@@ -59,29 +59,26 @@ try {
       $cmdOn->setName('On');
       $cmdOn->setEqLogic_id($virtual->getId());
       $cmdOn->setType('action');
-      $cmdOn->setLogicalId('on');
       $cmdOn->setSubType('other');
-      $cmdOn->setConfiguration('actionCheckCmd', array(
+      $cmdOn->setConfiguration('actionReturnCmd', array(
         array(
-          'cmd' => $cmd->getId(),
-          'options' => array(),
-          'enable' => 1
+          'cmd' => $cmdEtat->getId(),
+          'value' => 1
         )
       ));
-      $cmdOn->setIsVisible(1);
       $cmdOn->save();
 
-      // $cmdOff = new virtualCmd();
-      // $cmdOff->setName('Off');
-      // $cmdOff->setEqLogic_id($virtual->getId());
-      // $cmdOff->setType('action');
-      // $cmdOff->setLogicalId('off');
-      // $cmdOff->setSubType('other');
-      // $cmdOff->setValue($cmd->getId());
-      // $cmdOff->setConfiguration('updateCmdId', $cmd->getId());
-      // $cmdOff->setConfiguration('updateCmdToValue', 0);
-      // $cmdOff->setIsVisible(1);
-      // $cmdOff->save();
+      $cmdOff = new virtualCmd();
+      $cmdOff->setName('Off');
+      $cmdOff->setEqLogic_id($virtual->getId());
+      $cmdOff->setType('action');
+      $cmdOff->setLogicalId('off');
+      $cmdOff->setSubType('other');
+      $cmdOff->setValue($cmd->getId());
+      $cmdOff->setConfiguration('updateCmdId', $cmd->getId());
+      $cmdOff->setConfiguration('updateCmdToValue', 0);
+      $cmdOff->setIsVisible(1);
+      $cmdOff->save();
 
       $ledCreated++;
 
