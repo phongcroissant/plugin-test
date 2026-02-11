@@ -63,7 +63,8 @@ try {
       $cmdOn->setLogicalId('on');
       $cmdOn->setSubType('other');
       $cmdOn->setValue("Etat");
-      $cmdOn->setSubValue(1);
+      $cmdOn->setConfiguration('updateCmdId', $cmd->getId());
+      $cmdOn->setConfiguration('updateCmdToValue', 1);
       $cmdOn->setIsVisible(1);
       $cmdOn->save();
 
@@ -74,8 +75,9 @@ try {
       $cmdOff->setType('action');
       $cmdOff->setLogicalId('off');
       $cmdOff->setSubType('other');
-      $cmdOff->setValue("Etat");
-      $cmdOff->setSubValue(1);
+      $cmdOff->setValue($cmd->getId());
+      $cmdOff->setConfiguration('updateCmdId', $cmd->getId());
+      $cmdOff->setConfiguration('updateCmdToValue', 0);
       $cmdOff->setIsVisible(1);
       $cmdOff->save();
 
