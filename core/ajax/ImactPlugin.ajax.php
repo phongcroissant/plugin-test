@@ -61,7 +61,6 @@ try {
       $cmdOn->setType('action');
       $cmdOn->setLogicalId('on');
       $cmdOn->setSubType('other');
-      $cmdOn->setValue($cmd->getId());
       $cmdOn->setConfiguration('#'.'updateCmdId', $cmd->getId().'#');
       $cmdOn->setConfiguration('updateCmdToValue', 1);
       $cmdOn->setIsVisible(1);
