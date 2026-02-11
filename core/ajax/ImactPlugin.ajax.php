@@ -29,14 +29,35 @@ try {
     En V4 : autoriser l'exécution d'une méthode 'action' en GET en indiquant le(s) nom(s) de(s) action(s) dans un tableau en argument
   */
   ajax::init();
-  // $led_template=file_get_contents('./desktop/json/led_template.json');
+
   if (init('action') == 'addLEDS') {
-    $eq = ImactPlugin::byId(init('id'));
     $leds = json_decode(init('leds'), true);
+    include_file('core', 'virtual', 'class', 'virtual');
+    $ledCreated = 0;
 
-    $eq->addLEDS($leds);
+    foreach ($leds as $led) {
+      $virtual = new virtual();
+      $virtual->setEqType_name('virtual');
+      $virtual->setName($led['name']);
+      $virtual->setLogicalId('led_' . uniqid());
+      $virtual->setObject_id(2); // Objet parent
+      $virtual->setIsEnable(1);
+      $virtual->setIsVisible(1);
+      $virtual->save();
 
-    ajax::success("OK");
+      $cmd = new virtualCmd();
+      $cmd->setName('Etat');
+      $cmd->setEqLogic_id($virtual->getId());
+      $cmd->setType('info');
+      $cmd->setSubType('binary');
+      $cmd->setIsVisible(0);
+      $cmd->setIsHistorized(1);
+      $cmd->save();
+
+      $ledCreated++;
+
+    }
+    ajax::success($ledCreated . ' objet(s) créé(s) avec succès');
   }
 
   throw new Exception(__('Aucune méthode correspondante à', __FILE__) . ' : ' . init('action'));
