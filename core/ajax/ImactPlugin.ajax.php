@@ -66,7 +66,7 @@ try {
       $cmdOn->setSubType('other');
       $cmdOn->setConfiguration('actionReturnCmd', array(
         array(
-          'cmd' => $cmd->getId(),
+          'cmd' => $cmd->getLogicalId(),
           'value' => 1
         )
       ));
