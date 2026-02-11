@@ -176,37 +176,9 @@ class ImactPlugin extends eqLogic
   * Permet de modifier l'affichage du widget (également utilisable par les commandes)
   public function toHtml($_version = 'dashboard') {}
   */
-
-  /*     * **********************Getteur Setteur*************************** */
-}
-
-class ImactPluginCmd extends cmd
-{
-  /*     * *************************Attributs****************************** */
-
-  /*
-  public static $_widgetPossibility = array();
-  */
-
-  /*     * ***********************Methode static*************************** */
-
-
-  /*     * *********************Methode d'instance************************* */
-
-  /*
-  * Permet d'empêcher la suppression des commandes même si elles ne sont pas dans la nouvelle configuration de l'équipement envoyé en JS
-  public function dontRemoveCmd() {
-    return true;
-  }
-  */
-
-  // Exécution d'une commande
-  public function execute($_options = array())
-  {
-  }
-
   public function addLEDS($leds){
-    include_file('core','virtual','class','virtual');
+    plugin::byId('virtual')->includeClass();
+
     foreach ($leds as $led) {
 
       // Création de l'équipement virtuel
@@ -256,8 +228,37 @@ class ImactPluginCmd extends cmd
       // $cmdOff->setValue($cmdEtat->getId());
       // $cmdOff->save();
 
-      $ledCreated++;
     }
   }
+
+  /*     * **********************Getteur Setteur*************************** */
+}
+
+class ImactPluginCmd extends cmd
+{
+  /*     * *************************Attributs****************************** */
+
+  /*
+  public static $_widgetPossibility = array();
+  */
+
+  /*     * ***********************Methode static*************************** */
+
+
+  /*     * *********************Methode d'instance************************* */
+
+  /*
+  * Permet d'empêcher la suppression des commandes même si elles ne sont pas dans la nouvelle configuration de l'équipement envoyé en JS
+  public function dontRemoveCmd() {
+    return true;
+  }
+  */
+
+  // Exécution d'une commande
+  public function execute($_options = array())
+  {
+  }
+
+  
   /*     * **********************Getteur Setteur*************************** */
 }
