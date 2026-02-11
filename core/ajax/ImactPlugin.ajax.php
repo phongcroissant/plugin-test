@@ -53,7 +53,7 @@ try {
       $cmd->setType('info');
       $cmd->setLogicalId('etat');
       $cmd->setSubType('binary');
-      $cmd->setIsVisible(0);
+      $cmd->setIsVisible(1);
       $cmd->setIsHistorized(1);
       $cmd->save();
 
