@@ -40,24 +40,19 @@ try {
       $virtual->setEqType_name('virtual');
       $virtual->setName($led['name']);
       $virtual->setLogicalId('led_' . uniqid());
-      $virtual->setObject_id(2); // Objet parent
+      $virtual->setObject_id(2);
       $virtual->setIsEnable(1);
       $virtual->setIsVisible(1);
       $virtual->save();
 
-      $virtual = virtual::byId($virtual->getId());
-
-      $cmd = new virtualCmd();
-      $cmd->setName('Etat');
-      $cmd->setEqLogic_id($virtual->getId());
-      $cmd->setType('info');
-      $cmd->setLogicalId('etat');
-      $cmd->setSubType('binary');
-      $cmd->setIsVisible(1);
-      $cmd->setIsHistorized(1);
-      $cmd->save();
-
-      $cmd = virtualCmd::byId($cmd->getId());
+      $cmdEtat = new virtualCmd();
+      $cmdEtat->setName('Etat');
+      $cmdEtat->setEqLogic_id($virtual->getId());
+      $cmdEtat->setType('info');
+      $cmdEtat->setLogicalId('etat');
+      $cmdEtat->setSubType('binary');
+      $cmdEtat->setIsVisible(1);
+      $cmdEtat->save();
 
       $cmdOn = new virtualCmd();
       $cmdOn->setName('On');
@@ -66,7 +61,7 @@ try {
       $cmdOn->setSubType('other');
       $cmdOn->setConfiguration('actionReturnCmd', array(
         array(
-          'cmd' => $cmd->getLogicalId(),
+          'cmd' => $cmdEtat->getId(),
           'value' => 1
         )
       ));
