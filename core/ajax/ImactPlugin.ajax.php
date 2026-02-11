@@ -45,10 +45,6 @@ try {
       $virtual->setIsVisible(1);
       $virtual->save();
 
-      if ($cmd->getId() == '') {
-        throw new Exception('Erreur lors de la création de la commande Etat');
-      }
-
       $cmd = new virtualCmd();
       $cmd->setName('Etat');
       $cmd->setEqLogic_id($virtual->getId());
@@ -59,29 +55,29 @@ try {
       $cmd->setIsHistorized(1);
       $cmd->save();
 
-      $cmdOn = new virtualCmd();
-      $cmdOn->setName('On');
-      $cmdOn->setEqLogic_id($virtual->getId());
-      $cmdOn->setType('action');
-      $cmdOn->setLogicalId('on');
-      $cmdOn->setSubType('other');
-      $cmdOn->setValue($cmd->getId());
-      $cmdOn->setConfiguration('updateCmdId', $cmd->getId());
-      $cmdOn->setConfiguration('updateCmdToValue', 1);
-      $cmdOn->setIsVisible(1);
-      $cmdOn->save();
+      // $cmdOn = new virtualCmd();
+      // $cmdOn->setName('On');
+      // $cmdOn->setEqLogic_id($virtual->getId());
+      // $cmdOn->setType('action');
+      // $cmdOn->setLogicalId('on');
+      // $cmdOn->setSubType('other');
+      // $cmdOn->setValue($cmd->getId());
+      // $cmdOn->setConfiguration('updateCmdId', $cmd->getId());
+      // $cmdOn->setConfiguration('updateCmdToValue', 1);
+      // $cmdOn->setIsVisible(1);
+      // $cmdOn->save();
 
-      $cmdOff = new virtualCmd();
-      $cmdOff->setName('Off');
-      $cmdOff->setEqLogic_id($virtual->getId());
-      $cmdOff->setType('action');
-      $cmdOff->setLogicalId('off');
-      $cmdOff->setSubType('other');
-      $cmdOff->setValue($cmd->getId());
-      $cmdOff->setConfiguration('updateCmdId', $cmd->getId());
-      $cmdOff->setConfiguration('updateCmdToValue', 0);
-      $cmdOff->setIsVisible(1);
-      $cmdOff->save();
+      // $cmdOff = new virtualCmd();
+      // $cmdOff->setName('Off');
+      // $cmdOff->setEqLogic_id($virtual->getId());
+      // $cmdOff->setType('action');
+      // $cmdOff->setLogicalId('off');
+      // $cmdOff->setSubType('other');
+      // $cmdOff->setValue($cmd->getId());
+      // $cmdOff->setConfiguration('updateCmdId', $cmd->getId());
+      // $cmdOff->setConfiguration('updateCmdToValue', 0);
+      // $cmdOff->setIsVisible(1);
+      // $cmdOff->save();
 
       $ledCreated++;
 
