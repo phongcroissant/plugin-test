@@ -44,6 +44,14 @@ try {
       $virtual->setIsEnable(1);
       $virtual->setIsVisible(1);
       $virtual->save();
+
+      $cmd = new virtualCmd();
+      $cmd->setName('Etat');
+      $cmd->setEqLogic_id($virtual->getId());
+      $cmd->setType('info');
+      $cmd->setSubType('binary');
+      $cmd->save();
+      
       $ledCreated++;
 
     }
