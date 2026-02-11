@@ -54,6 +54,8 @@ try {
       $cmd->setIsHistorized(1);
       $cmd->save();
 
+      $virtual->refresh();
+
       $ledCreated++;
 
     }
