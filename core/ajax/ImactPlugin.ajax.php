@@ -57,7 +57,6 @@ try {
 
       $cmdOn = new virtualCmd();
       $cmdOn->setName('On');
-      $cmdOn->setSubName('Etat');
       $cmdOn->setEqLogic_id($virtual->getId());
       $cmdOn->setType('action');
       $cmdOn->setLogicalId('on');
@@ -70,7 +69,6 @@ try {
 
       $cmdOff = new virtualCmd();
       $cmdOff->setName('Off');
-      $cmdOff->setSubName('Etat');
       $cmdOff->setEqLogic_id($virtual->getId());
       $cmdOff->setType('action');
       $cmdOff->setLogicalId('off');
