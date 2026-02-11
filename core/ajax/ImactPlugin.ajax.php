@@ -33,6 +33,8 @@ try {
   if (init('action') == 'addLEDS') {
     $leds = json_decode(init('leds'), true);
     include_file('core', 'virtual', 'class', 'virtual');
+    include_file('core', 'virtualCmd', 'class', 'virtual');
+
     $ledCreated = 0;
 
     foreach ($leds as $led) {
