@@ -45,6 +45,10 @@ try {
       $virtual->setIsVisible(1);
       $virtual->save();
 
+      if ($cmd->getId() == '') {
+        throw new Exception('Erreur lors de la création de la commande Etat');
+      }
+
       $cmd = new virtualCmd();
       $cmd->setName('Etat');
       $cmd->setEqLogic_id($virtual->getId());
