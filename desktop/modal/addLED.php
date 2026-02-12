@@ -19,4 +19,7 @@ if (!isConnect('admin')) {
     <div style="text-align: center; margin-top: 20px;">
         <button class="btn btn-success" onclick="addLED('#LED_number')">{{Valider}}</button>
     </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-success" onclick="addLED('#LED_number')">{{Valider JSON}}</button>
+    </div>
 </div>
