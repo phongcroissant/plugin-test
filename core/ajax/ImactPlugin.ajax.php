@@ -54,6 +54,17 @@ try {
       $cmd->setIsHistorized(1);
       $cmd->save();
 
+      $cmdOn = new virtualCmd();
+      $cmdOn->setName('On');
+      $cmdOn->setEqLogic_id($virtual->getId());
+      $cmdOn->setType('action');
+      $cmdOn->setLogicalId('on');
+      $cmdOn->setSubType('default');
+      $cmdOn->setValue($cmd->getId());
+      $cmdOn->setConfiguration('updateCmdId', $cmd->getId());
+      $cmdOn->setIsVisible(1);
+      $cmdOn->save();
+
       $ledCreated++;
 
     }
