@@ -35,7 +35,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 		if (count($eqLogics) == 0) {
 			echo '<br><div class="text-center" style="font-size:1.2em;font-weight:bold;">{{Aucun équipement Template trouvé, cliquer sur "Ajouter" pour commencer}}</div>';
 		} else {
-		Champ de recherche
+		//Champ de recherche
 		echo '<div class="input-group" style="margin:5px;">';
 		echo '<input class="form-control roundedLeft" placeholder="{{Rechercher}}" id="in_searchEqlogic">';
 		echo '<div class="input-group-btn">';
@@ -43,7 +43,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 		echo '<a class="btn roundedRight hidden" id="bt_pluginDisplayAsTable" data-coreSupport="1" data-state="0"><i class="fas fa-grip-lines"></i></a>';
 		echo '</div>';
 		echo '</div>';
-		Liste des équipements du plugin
+		//Liste des équipements du plugin
 			echo '<div class="eqLogicThumbnailContainer">';
 			foreach ($eqLogics as $eqLogic) {
 				$opacity = ($eqLogic->getIsEnable()) ? '' : 'disableCard';
