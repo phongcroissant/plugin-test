@@ -60,8 +60,7 @@ try {
       $cmdOn->setType('action');
       $cmdOn->setLogicalId('on');
       $cmdOn->setSubType('default');
-      $cmdOn->setValue($cmd->getId());
-      $cmdOn->setConfiguration('updateCmdId', $cmd->getId());
+      //$cmdOn->setConfiguration('updateCmdId', $cmd->getId());
       $cmdOn->setIsVisible(1);
       $cmdOn->save();
 
